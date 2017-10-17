@@ -33,7 +33,9 @@ public class Expression {
 		return max;
 	}
 
-
+	public String getString(){
+		return "expression";
+	}
 
 	
 }

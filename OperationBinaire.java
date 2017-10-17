@@ -11,7 +11,10 @@ public abstract class OperationBinaire extends Expression {
 
 	public abstract Number getNumber();
 
-	public abstract String getString();
+	public String getString(){
+		return nb.getString() + " " + this.getSymbol() + " " +nb2.getString() ;
+	}
+	public abstract String getSymbol();
 
 	public int typeOf (){
 		return this.type;
