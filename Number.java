@@ -2,8 +2,8 @@ abstract class Number extends Expression {
 
 	public abstract int typeOf();
 
-	public long pgcd(int a, int b){
-		int r;
+	public long pgcd(long a, long b){
+		long r;
 		while (b != 0){
     		r = a%b;
     		a = b;
