@@ -24,6 +24,6 @@ class LongNumber extends Number {
 	public Number divide(LongNumber nb, LongNumber nb2){
 		if(nb.nb%nb2.nb == 0)
 			return new LongNumber(nb.nb/nb2.nb);
-		return new DoubleNumber(nb.nb, nb2.nb);
+		return new RationalNumber(nb.nb, nb2.nb);
 	}
 }
