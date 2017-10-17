@@ -12,7 +12,7 @@ class RationalNumber extends Number {
 	}
 
 	public RationalNumber add(RationalNumber nb, RationalNumber nb2){
-		long numerator1, numerator2, denominator1, denominator2;
+		long numerator1 = 0, numerator2 = 0, denominator1 = 0, denominator2 = 0;
 		numerator1 = nb.numerator*nb2.denominator;
 		denominator1 *= nb.denominator*nb2.denominator;
 		numerator2 *= nb2.numerator*nb.denominator;
@@ -21,7 +21,7 @@ class RationalNumber extends Number {
 	}
 
 	public RationalNumber substract(RationalNumber nb, RationalNumber nb2){
-		long numerator1, numerator2, denominator1, denominator2;
+		long numerator1 = 0, numerator2 = 0, denominator1 = 0, denominator2 = 0;
 		numerator1 = nb.numerator*nb2.denominator;
 		denominator1 *= nb.denominator*nb2.denominator;
 		numerator2 *= nb2.numerator*nb.denominator;
