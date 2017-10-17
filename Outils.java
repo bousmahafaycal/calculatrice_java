@@ -429,7 +429,4 @@ public class Outils
             chaine += month+day+hour+minute+seconde;
             return chaine;
         }
-
-        
-
 }
