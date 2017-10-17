@@ -2,7 +2,7 @@ class RationalNumber extends Number {
 	protected long numerator;
 	protected long denominator;
 
-	public RationnelNumber(long numerator, long denominator){
+	public RationalNumber(long numerator, long denominator){
 		this.numerator = numerator;
 		this.denominator = denominator;
 	}
