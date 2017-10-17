@@ -1,3 +1,5 @@
+import java.util.*;
+
 class LongNumber extends Number {
 	protected long nb;
 
@@ -24,7 +26,8 @@ class LongNumber extends Number {
 	public Number divide(LongNumber nb, LongNumber nb2){
 		if(nb.nb%nb2.nb == 0)
 			return new LongNumber(nb.nb/nb2.nb);
-		int divisor = pgcd(nb.nb, nb2.nb);
-		return new RationalNumber(nb.nb, nb2.nb);
+		long divisor = pgcd(valeurAbsolue(nb.nb), valeurAbsolue(nb2.nb));
+
+		return new RationalNumber(nb.nb/divisor, nb2.nb/divisor);
 	}
 }
