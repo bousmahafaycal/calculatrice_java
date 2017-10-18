@@ -11,19 +11,19 @@ class LongNumber extends Number {
 		return 1;
 	}
 
-	static public LongNumber add(LongNumber nb, LongNumber nb2){
+	public static LongNumber add(LongNumber nb, LongNumber nb2){
 		return new LongNumber(nb.nb+nb2.nb);
 	}
 
-	static public LongNumber substract(LongNumber nb, LongNumber nb2){
+	public static LongNumber substract(LongNumber nb, LongNumber nb2){
 		return new LongNumber(nb.nb-nb2.nb);
 	}
 
-	static public LongNumber multiplicate(LongNumber nb, LongNumber nb2){
+	public static LongNumber multiplicate(LongNumber nb, LongNumber nb2){
 		return new LongNumber(nb.nb*nb2.nb);
 	}
 
-	static public Number divide(LongNumber nb, LongNumber nb2){
+	public static Number divide(LongNumber nb, LongNumber nb2){
 		if(nb.nb%nb2.nb == 0)
 			return new LongNumber(nb.nb/nb2.nb);
 		long divisor = pgcd(valeurAbsolue(nb.nb), valeurAbsolue(nb2.nb));

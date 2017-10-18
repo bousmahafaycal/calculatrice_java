@@ -9,19 +9,19 @@ class DoubleNumber extends Number {
 		return 3;
 	}
 
-	static public DoubleNumber add(DoubleNumber nb, DoubleNumber nb2){
+	public static DoubleNumber add(DoubleNumber nb, DoubleNumber nb2){
 		return new DoubleNumber(nb.nb+nb2.nb);
 	}
 
-	static public DoubleNumber substract(DoubleNumber nb, DoubleNumber nb2){
+	public static DoubleNumber substract(DoubleNumber nb, DoubleNumber nb2){
 		return new DoubleNumber(nb.nb-nb2.nb);
 	}
 
-	static public DoubleNumber multiplicate(DoubleNumber nb, DoubleNumber nb2){
+	public static DoubleNumber multiplicate(DoubleNumber nb, DoubleNumber nb2){
 		return new DoubleNumber(nb.nb*nb2.nb);
 	}
 
-	static public DoubleNumber divide(DoubleNumber nb, DoubleNumber nb2){
+	public static DoubleNumber divide(DoubleNumber nb, DoubleNumber nb2){
 		return new DoubleNumber(nb.nb/nb2.nb);
 	}
 }
