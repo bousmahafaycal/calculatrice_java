@@ -12,7 +12,7 @@ abstract class Number extends Expression {
 		return a;
 	}
 
-	public long valeurAbsolue(long n){
+	public static long valeurAbsolue(long n){
 		if(n<0)
 			return -n;
 		return n;
