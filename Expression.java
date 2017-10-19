@@ -34,8 +34,49 @@ public class Expression {
 	}
 
 	public String getString(){
-		return "expression";
+		String s = "aaaa";
+		for (int i = 0; i < list.size() ; i++ ) {
+			
+			s += list.get(i).getString();
+			
+		}
+		return s;
 	}
 
+	public void addNumber(Number nb){
+		list.add(nb);
+	}
+
+	public boolean addOperationBinaire(OperationBinaire op){
+		int size = list.size();
+		if (size < 2){
+			return false;
+		}
+
+		Expression e = this.list.get(size-1);
+		Expression e2 = this.list.get(size-2);
+		this.list.remove(size-1);
+		this.list.remove(size-2);
+		op.setExpressions(e,e2);
+
+		if (op.typeOf() == 4){
+			list.add(op);
+		}else {
+			Expression n = op.getNumber();
+			list.add(n);
+		}
+
+		return true;
+
+	}
+
+	public boolean addOperationUnaire(OperationUnaire op){
+		int size = list.size();
+		if (size < 1){
+			return false;
+		}
+		list.add(op);
+		return true;
+	}
 	
 }

@@ -1,6 +1,12 @@
 public abstract class OperationUnaire extends Expression {
 	
 	Expression nb; 
+	int type;
+
+	public OperationUnaire(){
+
+	}
+
 	public OperationUnaire(Expression nb){
 		this.nb = nb;
 	}
@@ -16,5 +22,13 @@ public abstract class OperationUnaire extends Expression {
 	public abstract String getSymbol();
 
 
+	public  void setExpression(Expression nb){
+		this.nb = nb;
+		this.type = nb.typeOf();
+	}
+
+	public int typeOf (){
+		return this.type;
+	}
 
 }
