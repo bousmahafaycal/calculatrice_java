@@ -7,11 +7,7 @@ class LongNumber extends Number {
 		this.nb = nb;
 	}
 
-
-
-public String getString(){
-		
-	}	public int typeOf(){
+	public int typeOf(){
 		return 1;
 	}
 
