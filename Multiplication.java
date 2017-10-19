@@ -1,18 +1,23 @@
 public class Multiplication extends OperationBinaire {
 
-	public Multiplication(Expression nb1, Expression nb2){
-		super(nb1, nb2);
+	public Multiplication(){
+		
+	}
+	public Multiplication(Expression nb, Expression nb2){
+		super(nb, nb2);
 	}
 
 	public Number getNumber(){
-		if (this.type == 1){
-
-		}else if (this.type == 2){
-
+		int type = Expression.typeOfTwoExpression(nb,nb2);
+		Number n ;
+		if (type == 1){
+			n = LongNumber.multiplicate((LongNumber)this.nb, (LongNumber)this.nb2);
+		}else if (type == 2){
+			n = RationalNumber.multiplicate((RationalNumber)this.nb, (RationalNumber)this.nb2);
 		}else {
-			return null;
+			n = DoubleNumber.multiplicate((DoubleNumber)this.nb, (DoubleNumber)this.nb2);
 		}
-		return null;
+		return n;
 	}
 
 	public String getSymbol(){
