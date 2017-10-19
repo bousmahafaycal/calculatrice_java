@@ -12,38 +12,43 @@ class RationalNumber extends Number {
 	}
 
 	public static RationalNumber add(RationalNumber nb, RationalNumber nb2){
-		long numerator1 = 0, numerator2 = 0, denominator1 = 0, denominator2 = 0;
-		numerator1 = nb.numerator*nb2.denominator;
-		denominator1 *= nb.denominator*nb2.denominator;
-		numerator2 *= nb2.numerator*nb.denominator;
-		denominator2 *= nb2.denominator*nb.denominator;
-		return new RationalNumber(numerator1+numerator2, denominator1+denominator2);
+		RationalNumber r = new RationalNumber(nb.numerator*nb2.denominator+nb2.numerator*nb.denominator, nb.denominator*nb2.denominator);
+		r.simplificate();
+		return r;
 	}
 
 	public static RationalNumber substract(RationalNumber nb, RationalNumber nb2){
-		long numerator1 = 0, numerator2 = 0, denominator1 = 0, denominator2 = 0;
-		numerator1 = nb.numerator*nb2.denominator;
-		denominator1 *= nb.denominator*nb2.denominator;
-		numerator2 *= nb2.numerator*nb.denominator;
-		denominator2 *= nb2.denominator*nb.denominator;
-		return new RationalNumber(numerator1-numerator2, denominator1-denominator2);
+		RationalNumber r = new RationalNumber(nb.numerator*nb2.denominator-nb2.numerator*nb.denominator, nb.denominator*nb2.denominator);
+		r.simplificate();
+		return r;
 	}
 
 	public static RationalNumber multiplicate(RationalNumber nb, RationalNumber nb2){
-		return new RationalNumber(nb.numerator*nb2.numerator, nb.denominator*nb2.denominator);
+		RationalNumber r = new RationalNumber(nb.numerator*nb2.numerator, nb.denominator*nb2.denominator);
+		r.simplificate();
+		return r;
 	}
 
 	public static RationalNumber divide(RationalNumber nb, RationalNumber nb2){
-		long numerator = nb.numerator*nb2.denominator;
-		long denominator = nb.denominator*nb2.numerator;
-		long divisor = pgcd(valeurAbsolue(numerator), valeurAbsolue(denominator));
-		if(nb.nb<0 && nb2.nb<0){
-			nb.nb = -nb.nb;
-			nb2.nb = -nb2.nb;
-		}else if(nb2.nb<0){
-			nb.nb = -nb.nb;
-			nb2.nb = -nb2.nb;
+		RationalNumber r = new RationalNumber(nb.numerator*nb2.denominator, nb.denominator*nb2.numerator);
+		r.simplificate();
+		return r;
+	}
+
+	public void simplificate(){
+		long divisor = pgcd(absoluteValue(numerator), absoluteValue(denominator));
+		numerator /= divisor;
+		denominator /= divisor;
+		minusOfNominateur();
+	}
+
+	public void minusOfNominateur(){
+		if(numerator<0 && denominator<0){
+			numerator = -numerator;
+			denominator = -denominator;
+		}else if(denominator<0){
+			numerator = -numerator;
+			denominator = -denominator;
 		}
-		return new RationalNumber(nb.numerator*nb2.denominator, nb.denominator*nb2.numerator);
 	}
 }
