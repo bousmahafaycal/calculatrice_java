@@ -7,7 +7,11 @@ class LongNumber extends Number {
 		this.nb = nb;
 	}
 
-	public int typeOf(){
+
+
+public String getString(){
+		
+	}	public int typeOf(){
 		return 1;
 	}
 
@@ -35,5 +39,9 @@ class LongNumber extends Number {
 			nb2.nb = -nb2.nb;
 		}
 		return new RationalNumber(nb.nb/divisor, nb2.nb/divisor);
+	}
+
+	public String getString(){
+		return " "+Long.toString(nb)+" ";
 	}
 }

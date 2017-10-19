@@ -51,4 +51,8 @@ class RationalNumber extends Number {
 			denominator = -denominator;
 		}
 	}
+
+	public String getString(){
+		return " "+Long.toString(numerator)+"/"+Long.toString(denominator)+" ";
+	}
 }

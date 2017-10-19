@@ -24,4 +24,8 @@ class DoubleNumber extends Number {
 	public static DoubleNumber divide(DoubleNumber nb, DoubleNumber nb2){
 		return new DoubleNumber(nb.nb/nb2.nb);
 	}
+
+	public String getString(){
+		return " "+Double.toString(nb)+" ";
+	}
 }
