@@ -1,6 +1,6 @@
-class Number extends Expression {
+abstract class Number extends Expression {
 
-	public int typeOf();
+	public abstract int typeOf();
 
 	public static long pgcd(long a, long b){
 		long r;
