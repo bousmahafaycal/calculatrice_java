@@ -1,4 +1,4 @@
-class Inconnue implements Number {
+class Inconnue extends Number {
 
 	String name;
 

@@ -1,4 +1,4 @@
-class RationalNumber implements Number {
+class RationalNumber extends Number {
 	protected long numerator;
 	protected long denominator;
 
@@ -54,21 +54,5 @@ class RationalNumber implements Number {
 
 	public String getString(){
 		return " "+Long.toString(numerator)+"/"+Long.toString(denominator)+" ";
-	}
-
-	public static long pgcd(long a, long b){
-		long r;
-		while (b != 0){
-    		r = a%b;
-    		a = b;
-    		b = r;
-    	}
-		return a;
-	}
-
-	public static long absoluteValue(long n){
-		if(n<0)
-			return -n;
-		return n;
 	}
 }
