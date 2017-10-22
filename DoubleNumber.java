@@ -1,4 +1,4 @@
-class DoubleNumber extends Number {
+class DoubleNumber implements Number {
 	protected double nb;
 
 	public DoubleNumber(double nb){

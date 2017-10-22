@@ -1,6 +1,6 @@
 import java.util.*;
 
-class LongNumber extends Number {
+class LongNumber implements Number {
 	protected long nb;
 
 	public LongNumber(long nb){
@@ -39,5 +39,21 @@ class LongNumber extends Number {
 
 	public String getString(){
 		return " "+Long.toString(nb)+" ";
+	}
+
+	public static long pgcd(long a, long b){
+		long r;
+		while (b != 0){
+    		r = a%b;
+    		a = b;
+    		b = r;
+    	}
+		return a;
+	}
+
+	public static long absoluteValue(long n){
+		if(n<0)
+			return -n;
+		return n;
 	}
 }
