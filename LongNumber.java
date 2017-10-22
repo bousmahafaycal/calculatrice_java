@@ -37,6 +37,14 @@ class LongNumber extends Number {
 		return new RationalNumber(nb.nb/divisor, nb2.nb/divisor);
 	}
 
+	public static LongNumber oppisite(LongNumber nb){
+		return new LongNumber(-nb.nb);
+	}
+
+	public static RationalNumber inverse(LongNumber nb){
+		return new RationalNumber(1, nb.nb);
+	}
+
 	public String getString(){
 		return " "+Long.toString(nb)+" ";
 	}

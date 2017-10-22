@@ -25,6 +25,14 @@ class DoubleNumber extends Number {
 		return new DoubleNumber(nb.nb/nb2.nb);
 	}
 
+	public static DoubleNumber oppisite(DoubleNumber nb){
+		return new DoubleNumber(-nb.nb);
+	}
+
+	public static DoubleNumber inverse(DoubleNumber nb){
+		return new DoubleNumber(1/nb.nb);
+	}
+
 	public String getString(){
 		return " "+Double.toString(nb)+" ";
 	}

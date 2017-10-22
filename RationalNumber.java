@@ -52,6 +52,14 @@ class RationalNumber extends Number {
 		}
 	}
 
+	public static RationalNumber oppisite(RationalNumber nb){
+		return new RationalNumber(-nb.numerator, nb.denominator);
+	}
+
+	public static RationalNumber inverse(RationalNumber nb){
+		return new RationalNumber(nb.denominator, nb.numerator);
+	}
+
 	public String getString(){
 		return " "+Long.toString(numerator)+"/"+Long.toString(denominator)+" ";
 	}
