@@ -68,8 +68,9 @@ class ParseString {
 				return false;
 			}
 			else {
-				if (p_int == 0)
+				if (p_int == 0){
 					
+				}
 			}
 			
 		}
