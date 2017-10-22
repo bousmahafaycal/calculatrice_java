@@ -46,6 +46,12 @@ public class Outils
             return a;
         }
 
+        public static int findNb(String chaine, String recherche)
+        {
+            return findNb(chaine, recherche, 0, 1);
+        }
+
+
         // Fonction qui permet de compter le nombre d'occurence d'une chaine dans une autre
         public static int compter(String chaine, String recherche)
         {
