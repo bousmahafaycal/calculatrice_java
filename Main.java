@@ -16,6 +16,10 @@ class Main {
 		System.out.println(e.list.size());
 		System.out.println(e.getString());
 		// calculatrice();
+		System.out.println();
+		ParseString p = new ParseString("5/23 6 + aa");
+		boolean b = p.doParse();
+		System.out.println(b);
 	}
 
 	public static void calculatrice(){
