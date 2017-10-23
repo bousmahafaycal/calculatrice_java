@@ -20,7 +20,7 @@ class ParseString {
 	public boolean doParse(){
 		String s = "" ;
 		String [] tab = this.s.split(" ");
-		int type;
+		int type = 0;
 		int ancien = 0 ;
 		ParseFunction p = new ParseFunction();
 		int p_int;
@@ -41,7 +41,7 @@ class ParseString {
 					ancien = type;
 				}
 				
-				if (! addExpression(ancien,s))
+				if (! addExpression(type,s))
 					return false;
 				
 				

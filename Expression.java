@@ -57,12 +57,17 @@ public class Expression {
 		Expression e2 = this.list.get(size-2);
 		this.list.remove(size-1);
 		this.list.remove(size-2);
+		System.out.println("e "+e.getString());
+		System.out.println("e2 "+e2.getString());
+		
 		op.setExpressions(e,e2);
+		
 
 		if (op.typeOf() == 4){
 			list.add(op);
 		}else {
 			Expression n = op.getNumber();
+			System.out.println("blabla ° "+n.getString());
 			list.add(n);
 		}
 

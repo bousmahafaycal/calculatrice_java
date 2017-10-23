@@ -10,6 +10,7 @@ public class Addition extends OperationBinaire {
 	public Number getNumber(){
 		int type = Expression.typeOfTwoExpression(nb,nb2);
 		Number n ;
+		System.out.println("Addddd");
 		if (type == 1){
 			n = LongNumber.add((LongNumber)this.nb, (LongNumber)this.nb2);
 		}else if (type == 2){

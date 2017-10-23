@@ -19,13 +19,10 @@ class Calculatrice {
 			entrance  = sc.nextLine();
 			parser = new ParseString(entrance);
 			parser.doParse();
-			
-			Number n;
-			n = (Number)parser.list.get(0);
+
 			for (int i = 0; i<parser.list.size(); i++) {
 				if(parser.list.get(i) instanceof Number){
-					n = (Number)parser.list.get(i);
-					expression.addNumber(n);
+					expression.addNumber((Number)parser.list.get(i));
 				}else if(parser.list.get(i) instanceof OperationBinaire){
 					if(!expression.addOperationBinaire((OperationBinaire)parser.list.get(i))){
 						backup = i;

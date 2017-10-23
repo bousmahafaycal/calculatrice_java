@@ -26,7 +26,7 @@ public abstract class OperationBinaire extends Expression {
 
 	public void setExpressions(Expression nb, Expression nb2){
 		this.nb = nb;
-		this.nb2 = nb;
+		this.nb2 = nb2;
 		this.type = Expression.typeOfTwoExpression(nb,nb2);
 	}
 	
