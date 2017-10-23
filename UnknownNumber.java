@@ -11,6 +11,6 @@ class UnknownNumber extends Number {
 	}
 
 	public String getString(){
-		return name;
+		return " "+name+" ";
 	}
 }

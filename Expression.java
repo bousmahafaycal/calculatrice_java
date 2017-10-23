@@ -95,6 +95,7 @@ public class Expression {
 		}
 	
 	public void subst(String name, Number n, Expression parent ){
+		System.out.println("Subst Expression");
 		UnknownNumber tmp;
 		for (int i = 0; i < list.size() ; i++ ) {
 			if (list.get(i) instanceof UnknownNumber ){
@@ -106,6 +107,26 @@ public class Expression {
 				list.get(i).subst(name,n, this);
 			}
 			
+		}
+	}
+
+
+	public void calculate(){
+		Number n;
+		OperationBinaire op1;
+		OperationUnaire ou1;
+		for (int i = list.size()-1; i >= 0; i--){
+			if (list.get(i).typeOf() != 4 && !( list.get(i) instanceof Number)){
+				if (list.get(i) instanceof OperationBinaire){
+					op1 = (OperationBinaire) list.get(i);
+					n = op1.getNumber();
+				} else{
+					ou1 = (OperationUnaire) list.get(i);
+					n = ou1.getNumber();
+				}
+				list.remove(i);
+				list.add(i, n);
+			}
 		}
 	}
 }

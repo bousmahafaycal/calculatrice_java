@@ -30,7 +30,7 @@ class DoubleNumber extends Number {
 	}
 
 	public static DoubleNumber reverse(DoubleNumber nb){
-		return new DoubleNumber(1/nb.nb);
+		return new DoubleNumber(1.0/nb.nb);
 	}
 
 	public String getString(){
@@ -38,15 +38,17 @@ class DoubleNumber extends Number {
 	}
 
 	public static DoubleNumber getDoubleNumber(Number nb){
+		if (nb instanceof DoubleNumber){
+			return (DoubleNumber)nb;
+		} 
+		
 		if (nb instanceof RationalNumber){
-			RationalNumber newDouble = (RationalNumber)nb;
-			return new DoubleNumber(newDouble.numerator/newDouble.denominator);
-		}else if (nb instanceof LongNumber) {
-			LongNumber tmp = (LongNumber)nb;
-			double num = (double)tmp.nb;
-			return new DoubleNumber(num);
+			RationalNumber rn = (RationalNumber) nb; 
+			return new DoubleNumber(rn.numerator/rn.denominator);
 		}
-		DoubleNumber newDouble2 = (DoubleNumber)nb;
-		return newDouble2;
+
+		LongNumber ln = (LongNumber) nb;
+		return new DoubleNumber(ln.nb);
+
 	}
 }

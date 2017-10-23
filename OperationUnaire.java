@@ -44,6 +44,27 @@ public abstract class OperationUnaire extends Expression {
 		else if(this.nb instanceof OperationUnaire || this.nb instanceof OperationBinaire){
 			nb.subst(name,n, this);
 		}
+		parent.calculate();
+		
+	}
+
+	public void calculate(){
+		Number n;
+		OperationBinaire op1;
+		OperationUnaire ou1;
+		if (nb.typeOf() != 4){
+			if (nb instanceof OperationBinaire){
+				op1 = (OperationBinaire)nb;
+				n  = op1.getNumber();
+				nb = n;
+			}
+			if (nb instanceof OperationUnaire){
+				ou1 = (OperationUnaire)nb;
+				n  = ou1.getNumber();
+				nb = n;
+			}
+			
+		}
 		
 	}
 
