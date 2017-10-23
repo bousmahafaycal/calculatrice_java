@@ -9,4 +9,8 @@ class UnknownNumber extends Number {
 	public int typeOf(){
 		return 4;
 	}
+
+	public String getString(){
+		return name;
+	}
 }
