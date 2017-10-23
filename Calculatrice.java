@@ -40,7 +40,6 @@ class Calculatrice {
 				}else if (parser.list_function.get(i).equals("load")){
 					if (parser.args.get(i).length == 1) {
 						expression = Function.load(parser.args.get(i)[0], expression);
-						System.out.println("abb "+expression.list.size());
 					}
 				}
 			}
