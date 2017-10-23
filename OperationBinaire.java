@@ -29,5 +29,33 @@ public abstract class OperationBinaire extends Expression {
 		this.nb2 = nb2;
 		this.type = Expression.typeOfTwoExpression(nb,nb2);
 	}
+
+	public void subst(String name, Number n){
+		UnknownNumber tmp;
+		if (this.nb instanceof UnknownNumber){
+			tmp = (UnknownNumber) nb;
+			if (tmp.name == name){
+				nb = n;
+			}
+					
+		}
+		else if(this.nb instanceof OperationUnaire || this.nb instanceof OperationBinaire){
+			nb.subst(name,n);
+		}
+
+		if (this.nb2 instanceof UnknownNumber){
+			tmp = (UnknownNumber) nb;
+			if (tmp.name == name){
+				nb = n;
+			}
+					
+		}
+		else if(this.nb2 instanceof OperationUnaire || this.nb2 instanceof OperationBinaire){
+			nb.subst(name,n);
+		}
+
+
+		
+	}
 	
 }
