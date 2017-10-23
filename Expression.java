@@ -100,9 +100,11 @@ public class Expression {
 		for (int i = 0; i < s ; i++ ) {
 			if (list.get(i) instanceof UnknownNumber ){
 				tmp = (UnknownNumber) list.get(i);
-				if (tmp.name.equals(name))
+				if (tmp.name.equals(name)){
 					list.remove(i);
 					list.add(i,n);
+				}
+					
 			}else if(list.get(i) instanceof OperationUnaire || list.get(i) instanceof OperationBinaire){
 				list.get(i).subst(name,n, this);
 			}
