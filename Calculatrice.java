@@ -22,7 +22,7 @@ class Calculatrice {
 			entrance  = sc.nextLine();
 			evaluate(entrance);
 			
-			System.out.println(expression.getString()+"\n");
+			
 			for (int i = 0; i<parser.list_function.size(); i++) {
 				System.out.println(i);
 				if (parser.list_function.get(i).equals("clean")) {
@@ -43,6 +43,7 @@ class Calculatrice {
 					}
 				}
 			}
+			System.out.println(expression.getString()+"\n");
 		}
 	}
 
