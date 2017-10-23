@@ -36,7 +36,11 @@ class Calculatrice {
 				}
 			}for (int i = 0; i<backup; i++) {
 				expression.list.remove(expression.list.size()-1-i);
-			}System.out.println(expression.getString()+"\n");
+			}
+			System.out.println(expression.getString()+"\n");
+			for (int i = 0; i<parser.list_function.size(); i++) {
+				
+			}
 		}
 	}
 }
