@@ -12,15 +12,20 @@ class Calculatrice {
 		Scanner sc = new Scanner(System.in);
 		String entrance;
 		int backup;
+
 		while(true){
 			backup = 0;
 			System.out.print("calc> ");
 			entrance  = sc.nextLine();
 			parser = new ParseString(entrance);
 			parser.doParse();
+			
+			Number n;
+			n = (Number)parser.list.get(0);
 			for (int i = 0; i<parser.list.size(); i++) {
 				if(parser.list.get(i) instanceof Number){
-					expression.addNumber((Number)parser.list.get(i));
+					n = (Number)parser.list.get(i);
+					expression.addNumber(n);
 				}else if(parser.list.get(i) instanceof OperationBinaire){
 					if(!expression.addOperationBinaire((OperationBinaire)parser.list.get(i))){
 						backup = i;

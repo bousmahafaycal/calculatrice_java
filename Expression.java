@@ -80,11 +80,15 @@ public class Expression {
 	}
 	
 	public void subst(String name, Number n){
+		UnknownNumber tmp;
 		for (int i = 0; i < list.size() ; i++ ) {
-			if (list[i] instanceof UnknownNumber && (UnknownNumber)list[i].name == name){
-				list[i] = n;
-			}else if(list[i] instanceof OperationUnaire || list[i] instanceof OperationBinaire){
-				list[i].subst(name,n);
+			if (list.get(i) instanceof UnknownNumber ){
+				tmp = (UnknownNumber) list.get(i);
+				if (tmp.name == name)
+					list.remove(i);
+					list.add(i,n);
+			}else if(list.get(i) instanceof OperationUnaire || list.get(i) instanceof OperationBinaire){
+				list.get(i).subst(name,n);
 			}
 			
 		}

@@ -106,19 +106,19 @@ class ParseString {
 	}
 
 	private void createModulo(String s){
-		list.add(new Multiplication());
+		// list.add(new Multiplication());
 	}
 
 	private void createPower(String s){
-		list.add(new Multiplication());
+		// list.add(new Multiplication());
 	}
 
 	private void createOpposite(String s){
-		list.add(new Multiplication());
+		list.add(new Opposite());
 	}
 
 	private void createReverse(String s){
-		list.add(new Multiplication());
+		list.add(new Reverse());
 	}
 
 	private boolean createNumber(String s){
@@ -136,20 +136,19 @@ class ParseString {
 				String [] tab = s.split("/");
 				list.add(new RationalNumber(Long.parseLong(tab[0]),Long.parseLong(tab[1])));
 			}
+			
 
 		} else if (nb_point == 1){
 			list.add(new DoubleNumber(Double.parseDouble(s)));
 		} else {
 			return false;
 		}
-
 		return true;
 
 	}
 
 	private void createUnknown(String s){
-		System.out.println("unknown : " + s);
-
+		list.add(new UnknownNumber(s));
 	}
 
 	public ArrayList<Expression> getExpressions(){

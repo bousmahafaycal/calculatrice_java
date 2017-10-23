@@ -5,7 +5,7 @@ class ParseFunction {
 	ArrayList<String[]> args = new ArrayList<String[]> ();
 
 
-	String [] list_function = {"exit","setvariable","getvariable", "clean", "subst", "help"};
+	static String [] list_function = {"exit","setvariable","getvariable", "clean", "subst", "help"};
 
 	public ParseFunction(String s){
 		s = s.replace(" ","");
