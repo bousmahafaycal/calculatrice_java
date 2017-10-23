@@ -28,4 +28,9 @@ class Function {
 		}
 	}
 
+
+	public static void load(String path, Expression e){
+
+	}
+
 }
