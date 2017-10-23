@@ -9,7 +9,7 @@ public class Reverse extends OperationUnaire {
 
 	public Number getNumber(){
 		Number n ;
-		if (type == 1){
+		if (this.type == 1){
 			n = LongNumber.reverse((LongNumber)this.nb);
 		}else if (type == 2){
 			n = RationalNumber.reverse((RationalNumber)this.nb);

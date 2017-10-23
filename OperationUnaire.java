@@ -1,7 +1,7 @@
 public abstract class OperationUnaire extends Expression {
 	
 	Expression nb; 
-	int type;
+	int type = 0;
 
 	public OperationUnaire(){
 
@@ -9,6 +9,7 @@ public abstract class OperationUnaire extends Expression {
 
 	public OperationUnaire(Expression nb){
 		this.nb = nb;
+		this.type = nb.typeOf();
 	}
 
 
@@ -31,7 +32,7 @@ public abstract class OperationUnaire extends Expression {
 		return this.type;
 	}
 
-	public void subst(String name, Number n){
+	public void subst(String name, Number n, Expression parent){
 		UnknownNumber tmp;
 		if (this.nb instanceof UnknownNumber){
 			tmp = (UnknownNumber) nb;
@@ -41,7 +42,7 @@ public abstract class OperationUnaire extends Expression {
 					
 		}
 		else if(this.nb instanceof OperationUnaire || this.nb instanceof OperationBinaire){
-			nb.subst(name,n);
+			nb.subst(name,n, this);
 		}
 		
 	}
