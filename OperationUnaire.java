@@ -36,7 +36,7 @@ public abstract class OperationUnaire extends Expression {
 		UnknownNumber tmp;
 		if (this.nb instanceof UnknownNumber){
 			tmp = (UnknownNumber) nb;
-			if (tmp.name == name){
+			if (tmp.name.equals( name)){
 				nb = n;
 			}
 					
