@@ -31,6 +31,7 @@ public abstract class OperationBinaire extends Expression {
 	}
 
 	public void subst(String name, Number n, Expression parent){
+		System.out.println("Subst OperationBinaire");
 		UnknownNumber tmp;
 		if (this.nb instanceof UnknownNumber){
 			tmp = (UnknownNumber) nb;

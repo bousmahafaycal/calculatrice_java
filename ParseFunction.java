@@ -29,7 +29,7 @@ class ParseFunction {
 			return 0;
 		}
 
-		String in = s.substring(left, right);
+		String in = s.substring(left+1, right);
 		String function =  s.substring(0,left);
 		for (int i = 0; i < list_function.length ; i++) {
 			if (function.equals(list_function[i])){

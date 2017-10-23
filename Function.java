@@ -1,8 +1,9 @@
 class Function {
 	
 
-	public static void cleanUp(Expression e){
-		e = new Expression();
+	public static Expression cleanUp(){
+		Expression e = new Expression();
+		return e;
 	}
 
 	public static void help(){
@@ -29,7 +30,20 @@ class Function {
 	}
 
 
-	public static void load(String path, Expression e){
+	public static Expression load(String path, Expression e){
+		Calculatrice c = new Calculatrice(e);
+		try{
+			String str = Outils.lireFichier(path);
+			str = str.replace("  "," ");
+			if (str.charAt(0) == ' ')
+				str = str.substring(1);
+			c.evaluate(str);
+			return c.expression;
+		}
+		catch(Exception exc){
+			return e;
+		}
+		
 
 	}
 
