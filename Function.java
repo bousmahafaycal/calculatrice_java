@@ -20,4 +20,12 @@ class Function {
 		e.subst(name, n);
 	}
 
+	public static void save(String path, Expression e){
+		try{
+			Outils.ecrireFichier(path, e.getString());
+		}catch(Exception exception){
+
+		}
+	}
+
 }
