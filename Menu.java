@@ -26,5 +26,9 @@ public class Menu {
 			System.out.println("Erreur : Veuillez entrer un nombre entre "+1+" et "+choix.length);
 			action = menu("Choisissez ce que vous  voulez faire : ", choix, true);
 		}
+		if(action == 1){
+			Calculatrice calculatrice = new Calculatrice();
+			calculatrice.calcul();
+		}
 	}
 }

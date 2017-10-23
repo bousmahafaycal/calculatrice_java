@@ -8,7 +8,7 @@ class Calculatrice {
 
 	}
 
-	public void calculatrice(){
+	public void calcul(){
 		Scanner sc = new Scanner(System.in);
 		String entrance;
 		int backup;
@@ -20,26 +20,21 @@ class Calculatrice {
 			parser.doParse();
 			for (int i = 0; i<parser.list.size(); i++) {
 				if(parser.list.get(i) instanceof Number){
-					if(!expression.addNumber(parser.list.get(i))){
+					expression.addNumber((Number)parser.list.get(i));
+				}else if(parser.list.get(i) instanceof OperationBinaire){
+					if(!expression.addOperationBinaire((OperationBinaire)parser.list.get(i))){
 						backup = i;
 						break;
 					}
-				}else if(parser.list.get(i) instanceof OperationBinaire){
-					if(!expression.addOperationBinaire(parser.list.get(i))){
-						if(!expression.addNumber(parser.list.get(i))){
-							backup = i;
-							break;
-					}
 				}else if(parser.list.get(i) instanceof OperationUnaire){
-					if(!expression.addOperationUnaire(parser.list.get(i))){
-						if(!expression.addNumber(parser.list.get(i))){
-							backup = i;
-							break;
+					if(!expression.addOperationUnaire((OperationUnaire)parser.list.get(i))){
+						backup = i;
+						break;
 					}
 				}
 			}for (int i = 0; i<backup; i++) {
 				expression.list.remove(expression.list.size()-1-i);
-			}System.out.println(expression.list.getString()+"\n");
+			}System.out.println(expression.getString()+"\n");
 		}
 	}
 }

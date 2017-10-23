@@ -1,8 +1,8 @@
-class Inconnue extends Number {
+class UnknownNumber extends Number {
 
 	String name;
 
-	public Inconnue(String name){
+	public UnknownNumber(String name){
 		this.name = name;
 	}
 
