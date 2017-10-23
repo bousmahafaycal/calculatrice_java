@@ -41,7 +41,7 @@ class LongNumber extends Number {
 		return new LongNumber(-nb.nb);
 	}
 
-	public static RationalNumber inverse(LongNumber nb){
+	public static RationalNumber reverse(LongNumber nb){
 		return new RationalNumber(1, nb.nb);
 	}
 

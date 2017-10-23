@@ -56,7 +56,7 @@ class RationalNumber extends Number {
 		return new RationalNumber(-nb.numerator, nb.denominator);
 	}
 
-	public static RationalNumber inverse(RationalNumber nb){
+	public static RationalNumber reverse(RationalNumber nb){
 		return new RationalNumber(nb.denominator, nb.numerator);
 	}
 

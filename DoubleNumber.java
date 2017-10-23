@@ -29,7 +29,7 @@ class DoubleNumber extends Number {
 		return new DoubleNumber(-nb.nb);
 	}
 
-	public static DoubleNumber inverse(DoubleNumber nb){
+	public static DoubleNumber reverse(DoubleNumber nb){
 		return new DoubleNumber(1/nb.nb);
 	}
 
