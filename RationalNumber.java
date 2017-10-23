@@ -63,4 +63,13 @@ class RationalNumber extends Number {
 	public String getString(){
 		return " "+Long.toString(numerator)+"/"+Long.toString(denominator)+" ";
 	}
+
+	public static RationalNumber getRationalNumber(Number nb){
+		RationalNumber newRational = (RationalNumber)nb;
+		LongNumber num = (LongNumber)nb;
+		if(newRational instanceof RationalNumber)
+			return newRational;
+		newRational = new RationalNumber(num.nb, 1);
+		return newRational;
+	}
 }
