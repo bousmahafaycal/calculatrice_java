@@ -53,8 +53,8 @@ public class Expression {
 			return false;
 		}
 
-		Expression e = this.list.get(size-1);
-		Expression e2 = this.list.get(size-2);
+		Expression e = this.list.get(size-2);
+		Expression e2 = this.list.get(size-1);
 		this.list.remove(size-1);
 		this.list.remove(size-2);
 		
