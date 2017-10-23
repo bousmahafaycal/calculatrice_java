@@ -53,14 +53,7 @@ class ParseFunction {
 	
 
 
-	public void printListFunction(){
-		// Maybe move it in the consol interface
-		System.out.println("Voici la liste de fonctions disponible :");
-		for (int i = 0; i < list_function.length; i++){
-			System.out.println("- "+list_function[i]);
-		}
-		System.out.println();
-	}
+
 
 
 

@@ -79,4 +79,14 @@ public class Expression {
 		return true;
 	}
 	
+	public void subst(String name, Number n){
+		for (int i = 0; i < list.size() ; i++ ) {
+			if (list[i] instanceof UnknownNumber && (UnknownNumber)list[i].name == name){
+				list[i] = n;
+			}else if(list[i] instanceof OperationUnaire || list[i] instanceof OperationBinaire){
+				list[i].subst(name,n);
+			}
+			
+		}
+	}
 }
