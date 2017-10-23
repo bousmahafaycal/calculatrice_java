@@ -1,15 +1,21 @@
+import  java.util.ArrayList;
 class ParseFunction {
 	private String s;
-	private String [] function ;
-	private int function_id;
+	ArrayList<String> function = new ArrayList<String>() ;
+	ArrayList<String[]> args = new ArrayList<String[]> ();
 
-	private String [] list_function = {"exit","setvariable","getvariable", "clean", "replaceunknown", "help"};
+
+	String [] list_function = {"exit","setvariable","getvariable", "clean", "subst", "help"};
 
 	public ParseFunction(String s){
 		s = s.replace(" ","");
 		// Mettre en minuscule s
 		this.s = s;
 
+
+	}
+
+	public ParseFunction(){
 
 	}
 
@@ -24,10 +30,24 @@ class ParseFunction {
 		}
 
 		String in = s.substring(left, right);
+		String function =  s.substring(0,left);
+		for (int i = 0; i < list_function.length ; i++) {
+			if (function.equals(list_function[i])){
+				this.function.add(function);
+				this.args.add(in.split(","));
+				return 1;
+			}
+		}
+		
+		
 
-		this.function = s.substring(0, left);
-		this.args = in.split(",");
+		return -1;
 
+	}
+
+	public void setString(String s){
+		s = s.replace(" ","");
+		this.s = s;
 	}
 
 	
