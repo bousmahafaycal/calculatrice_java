@@ -77,11 +77,24 @@ public class Expression {
 		if (size < 1){
 			return false;
 		}
-		list.add(op);
+		Expression e = this.list.get(size-1);
+		this.list.remove(size-1);
+		op.setExpression(e);
+		if (op.typeOf() == 4){
+			list.add(op);
+		}else {
+			Expression n = op.getNumber();
+			list.add(n);
+		}
 		return true;
 	}
+
+	public void subst(String name, Number n ){
+
+			subst(name, n, null);
+		}
 	
-	public void subst(String name, Number n){
+	public void subst(String name, Number n, Expression parent ){
 		UnknownNumber tmp;
 		for (int i = 0; i < list.size() ; i++ ) {
 			if (list.get(i) instanceof UnknownNumber ){
@@ -90,7 +103,7 @@ public class Expression {
 					list.remove(i);
 					list.add(i,n);
 			}else if(list.get(i) instanceof OperationUnaire || list.get(i) instanceof OperationBinaire){
-				list.get(i).subst(name,n);
+				list.get(i).subst(name,n, this);
 			}
 			
 		}
