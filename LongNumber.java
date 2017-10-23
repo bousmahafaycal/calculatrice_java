@@ -37,7 +37,7 @@ class LongNumber extends Number {
 		return new RationalNumber(nb.nb/divisor, nb2.nb/divisor);
 	}
 
-	public static LongNumber oppisite(LongNumber nb){
+	public static LongNumber opposite(LongNumber nb){
 		return new LongNumber(-nb.nb);
 	}
 

@@ -25,7 +25,7 @@ class DoubleNumber extends Number {
 		return new DoubleNumber(nb.nb/nb2.nb);
 	}
 
-	public static DoubleNumber oppisite(DoubleNumber nb){
+	public static DoubleNumber opposite(DoubleNumber nb){
 		return new DoubleNumber(-nb.nb);
 	}
 

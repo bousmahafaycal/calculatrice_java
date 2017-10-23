@@ -52,7 +52,7 @@ class RationalNumber extends Number {
 		}
 	}
 
-	public static RationalNumber oppisite(RationalNumber nb){
+	public static RationalNumber opposite(RationalNumber nb){
 		return new RationalNumber(-nb.numerator, nb.denominator);
 	}
 
