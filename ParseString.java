@@ -89,7 +89,6 @@ class ParseString {
 	}
 	
 	private void createAddition(String s){
-		System.out.println("Addition");
 		list.add(new Addition());
 	}
 
