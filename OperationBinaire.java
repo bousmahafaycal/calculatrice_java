@@ -36,6 +36,7 @@ public abstract class OperationBinaire extends Expression {
 			tmp = (UnknownNumber) nb;
 			if (tmp.name == name){
 				setExpressions(n, nb2);
+				parent.calculate();
 			}
 					
 		}
@@ -47,6 +48,8 @@ public abstract class OperationBinaire extends Expression {
 			tmp = (UnknownNumber) nb2;
 			if (tmp.name == name){
 				setExpressions(nb, n);
+				parent.calculate();
+				
 			}
 					
 		}
@@ -54,7 +57,43 @@ public abstract class OperationBinaire extends Expression {
 			nb.subst(name,n);
 		}
 
+		
 
+
+		
+	}
+
+	public void calculate(){
+		Number n;
+		OperationBinaire op1, op2;
+		OperationUnaire ou1, ou2;
+		if (nb.typeOf() != 4){
+			if (nb instanceof OperationBinaire){
+				op1 = (OperationBinaire)nb;
+				n  = op1.getNumber();
+				nb = n;
+			}
+			if (nb instanceof OperationUnaire){
+				ou1 = (OperationUnaire)nb;
+				n  = ou1.getNumber();
+				nb = n;
+			}
+			
+		}
+
+		if (nb2.typeOf() != 4){
+			if (nb2 instanceof OperationBinaire){
+				op2 = (OperationBinaire)nb2;
+				n  = op2.getNumber();
+				nb2 = n;
+			}
+			if (nb2 instanceof OperationUnaire){
+				ou2 = (OperationUnaire)nb2;
+				n  = ou2.getNumber();
+				nb2 = n;
+			}
+			
+		}
 		
 	}
 	
