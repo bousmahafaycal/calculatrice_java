@@ -43,7 +43,7 @@ class Calculatrice {
 					Function.help();
 				else if (parser.list_function.get(i).equals("subst")){
 					if (parser.args.get(i).length == 2) {
-						Function.subst(expression, parser.args.get(i)[0], createNumb(parser.args.get(i)[1]));
+						Function.subst(expression, parser.args.get(i)[0], Number.createNumber(parser.args.get(i)[1]));
 					}
 				}
 				else if (parser.list_function.get(i).equals("save")){
@@ -58,9 +58,5 @@ class Calculatrice {
 				}
 			}
 		}
-	}
-
-	public Number createNumb(String s){
-		
 	}
 }

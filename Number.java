@@ -17,4 +17,25 @@ abstract class Number extends Expression {
 			return -n;
 		return n;
 	}
+
+	public static Number createNumber(String s){
+		int nb_point = Outils.compter(s,".");
+		int nb_divide = Outils.compter(s,"/");
+		
+		if (nb_divide >= 2){
+			return null;
+		}
+		if (nb_point == 0){
+			if (nb_divide==0)
+				return new LongNumber(Long.parseLong(s));
+			else{
+				String [] tab = s.split("/");
+				return new RationalNumber(Long.parseLong(tab[0]),Long.parseLong(tab[1]));
+			}
+			
+
+		} else if (nb_point == 1){
+			return new DoubleNumber(Double.parseDouble(s));
+		}return null;
+	}
 }
