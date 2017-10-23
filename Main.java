@@ -21,13 +21,4 @@ class Main {
 		boolean b = p.doParse();
 		System.out.println(b);
 	}
-
-	public static void calculatrice(){
-		while(true){
-			
-		}
-	}
-
-
-
 }
