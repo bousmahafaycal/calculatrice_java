@@ -39,8 +39,28 @@ class Calculatrice {
 			}
 			System.out.println(expression.getString()+"\n");
 			for (int i = 0; i<parser.list_function.size(); i++) {
-				
+				if (parser.list_function.get(i).equals("help"))
+					Function.help();
+				else if (parser.list_function.get(i).equals("subst")){
+					if (parser.args.get(i).length == 2) {
+						Function.subst(expression, parser.args.get(i)[0], createNumb(parser.args.get(i)[1]));
+					}
+				}
+				else if (parser.list_function.get(i).equals("save")){
+					if (parser.args.get(i).length == 1) {
+						Function.save(parser.args.get(i)[0], expression);
+					}
+				}
+				else if (parser.list_function.get(i).equals("load")){
+					if (parser.args.get(i).length == 1) {
+						Function.load(parser.args.get(i)[0], expression);
+					}
+				}
 			}
 		}
+	}
+
+	public Number createNumb(String s){
+		
 	}
 }

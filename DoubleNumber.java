@@ -26,15 +26,27 @@ class DoubleNumber extends Number {
 	}
 
 	public static DoubleNumber opposite(DoubleNumber nb){
-		
 		return new DoubleNumber(-nb.nb);
 	}
 
 	public static DoubleNumber reverse(DoubleNumber nb){
-		return new DoubleNumber(1.0/nb.nb);;
+		return new DoubleNumber(1/nb.nb);
 	}
 
 	public String getString(){
 		return " "+Double.toString(nb)+" ";
+	}
+
+	public static DoubleNumber getDoubleNumber(Number nb){
+		if (nb instanceof RationalNumber){
+			RationalNumber newDouble = (RationalNumber)nb;
+			return new DoubleNumber(newDouble.numerator/newDouble.denominator);
+		}else if (nb instanceof LongNumber) {
+			LongNumber tmp = (LongNumber)nb;
+			double num = (double)tmp.nb;
+			return new DoubleNumber(num);
+		}
+		DoubleNumber newDouble2 = (DoubleNumber)nb;
+		return newDouble2;
 	}
 }
