@@ -26,11 +26,12 @@ class DoubleNumber extends Number {
 	}
 
 	public static DoubleNumber opposite(DoubleNumber nb){
+		
 		return new DoubleNumber(-nb.nb);
 	}
 
 	public static DoubleNumber reverse(DoubleNumber nb){
-		return new DoubleNumber(1/nb.nb);
+		return new DoubleNumber(1.0/nb.nb);;
 	}
 
 	public String getString(){
