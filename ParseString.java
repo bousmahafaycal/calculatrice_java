@@ -121,7 +121,6 @@ class ParseString {
 	}
 
 	private boolean createNumber(String s){
-		System.out.println("nb : "+s);
 		int nb_point = Outils.compter(s,".");
 		int nb_divide = Outils.compter(s,"/");
 		

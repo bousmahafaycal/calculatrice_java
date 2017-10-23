@@ -26,7 +26,6 @@ class DoubleNumber extends Number {
 	}
 
 	public static DoubleNumber opposite(DoubleNumber nb){
-		
 		return new DoubleNumber(-nb.nb);
 	}
 
@@ -36,5 +35,20 @@ class DoubleNumber extends Number {
 
 	public String getString(){
 		return " "+Double.toString(nb)+" ";
+	}
+
+	public static DoubleNumber getDoubleNumber(Number nb){
+		if (nb instanceof DoubleNumber){
+			return (DoubleNumber)nb;
+		} 
+		
+		if (nb instanceof RationalNumber){
+			RationalNumber rn = (RationalNumber) nb; 
+			return new DoubleNumber(rn.numerator/rn.denominator);
+		}
+
+		LongNumber ln = (LongNumber) nb;
+		return new DoubleNumber(ln.nb);
+
 	}
 }
