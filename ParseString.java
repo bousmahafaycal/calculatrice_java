@@ -5,10 +5,13 @@ class ParseString {
 	
 	private String s = new String();
 	ArrayList<Expression> list = new ArrayList<Expression>();
+	ArrayList<String> list_function = new ArrayList<String>();
+	ArrayList<String[]> args = new ArrayList<String[]> ();
 
 	public ParseString(String s){
 		s = s.replace("  "," ");
 		this.s = s;
+		
 		
 
 
@@ -19,12 +22,12 @@ class ParseString {
 		String [] tab = this.s.split(" ");
 		int type;
 		int ancien = 0 ;
-		ParseFunction p;
+		ParseFunction p = new ParseFunction();
 		int p_int;
 
 		for (int i = 0; i < tab.length; i++){
 			s = tab[i];
-			p = new ParseFunction(s);
+			p.setString(s);
 			p_int = p.doParse();
 			if (p_int == 0){
 				for (int j = 0; j < s.length(); j++ ){
@@ -32,51 +35,57 @@ class ParseString {
 					if (j != 0){
 						if (type != ancien && ! (type == 1 && ancien == 5 || type == 5 && ancien == 1)){
 							return false;
-						}
-						
+						}						
 					}
-					
-					
 
 					ancien = type;
 				}
-
-				if (ancien == 1)
-					createNumber(s);
-				else if (ancien == 2)
-					createUnknown(s);
-				else if (ancien == 3)
-					createMultiplication(s);
-				else if (ancien == 4)
-					createAddition(s);
-				else if (ancien == 5)
-					createDivision(s);
-				else if (ancien == 6)
-					createSubstraction(s);
-				else if (ancien == 7)
-					createOpposite(s);
-				else if (ancien == 8)
-					createReverse(s);
-				else if (ancien == 9)
-					createPower(s);
-				else if (ancien == 10)
-					createModulo(s);
-				else
+				
+				if (! addExpression(ancien,s))
 					return false;
+				
+				
 			} 
-			else if (p_int == -1){
+			else if (p_int == -1 ){
 				return false;
 			}
-			else {
-				if (p_int == 0){
-					
-				}
-			}
+			
+			
+
 			
 		}
+		list_function = p.function;
+		args = p.args;
 
 		return true;
 
+	}
+
+	public boolean addExpression(int ancien, String s){
+			if (ancien == 1)
+				createNumber(s);
+			else if (ancien == 2)
+				createUnknown(s);
+			else if (ancien == 3)
+				createMultiplication(s);
+			else if (ancien == 4)
+				createAddition(s);
+			else if (ancien == 5)
+				createDivision(s);
+			else if (ancien == 6)
+				createSubstraction(s);
+			else if (ancien == 7)
+				createOpposite(s);
+			else if (ancien == 8)
+				createReverse(s);
+			/* else if (ancien == 9)
+				createPower(s);
+			else if (ancien == 10)
+				createModulo(s); */
+			else
+				return false;
+			
+			return true;
 	}
 	
 	private void createAddition(String s){
@@ -181,13 +190,13 @@ class ParseString {
 			return 8;
 		}
 
-		else if (s == '^'){
+		/*else if (s == '^'){
 			return 9;
 		}
 
 		else if (s == '%'){
 			return 10;
-		}
+		}*/
 
 		return 0;
 

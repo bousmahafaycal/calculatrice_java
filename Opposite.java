@@ -10,11 +10,11 @@ public class Opposite extends OperationUnaire {
 	public Number getNumber(){
 		Number n ;
 		if (type == 1){
-			// n = LongNumber.substract((LongNumber)this.nb, (LongNumber)this.nb2);
+			n = LongNumber.opposite((LongNumber)this.nb);
 		}else if (type == 2){
-			// n = RationalNumber.substract((RationalNumber)this.nb, (RationalNumber)this.nb2);
+			n = RationalNumber.opposite((RationalNumber)this.nb);
 		}else {
-			// n = DoubleNumber.substract((DoubleNumber)this.nb, (DoubleNumber)this.nb2);
+			n = DoubleNumber.opposite((DoubleNumber)this.nb);
 		}
 		return n;
 	}
