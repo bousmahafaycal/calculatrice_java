@@ -13,7 +13,8 @@ public class Addition extends OperationBinaire {
 		if (type == 1){
 			n = LongNumber.add((LongNumber)this.nb, (LongNumber)this.nb2);
 		}else if (type == 2){
-			n = RationalNumber.add((RationalNumber)this.nb, (RationalNumber)this.nb2);
+			System.out.println("bla");
+			n = RationalNumber.add(RationalNumber.getRationalNumber((Number)this.nb), RationalNumber.getRationalNumber((Number)this.nb2));
 		}else {
 			n = DoubleNumber.add((DoubleNumber)this.nb, (DoubleNumber)this.nb2);
 		}
