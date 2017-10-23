@@ -16,7 +16,7 @@ public abstract class OperationBinaire extends Expression {
 	public abstract Number getNumber();
 
 	public String getString(){
-		return nb.getString() + " " + this.getSymbol() + " " +nb2.getString();
+		return nb.getString() + " "   +nb2.getString() + " " + this.getSymbol();
 	}
 	public abstract String getSymbol();
 
@@ -30,12 +30,12 @@ public abstract class OperationBinaire extends Expression {
 		this.type = Expression.typeOfTwoExpression(nb,nb2);
 	}
 
-	public void subst(String name, Number n){
+	public void subst(String name, Number n, Expression parent){
 		UnknownNumber tmp;
 		if (this.nb instanceof UnknownNumber){
 			tmp = (UnknownNumber) nb;
 			if (tmp.name == name){
-				nb = n;
+				setExpressions(n, nb2);
 			}
 					
 		}
@@ -44,9 +44,9 @@ public abstract class OperationBinaire extends Expression {
 		}
 
 		if (this.nb2 instanceof UnknownNumber){
-			tmp = (UnknownNumber) nb;
+			tmp = (UnknownNumber) nb2;
 			if (tmp.name == name){
-				nb = n;
+				setExpressions(nb, n);
 			}
 					
 		}
