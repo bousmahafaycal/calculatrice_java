@@ -2,7 +2,7 @@ import java.util.*;
 
 class Calculatrice {
 	ParseString parser;
-	Expression expression;
+	Expression expression = new Expression();
 
 	public Calculatrice(){
 
