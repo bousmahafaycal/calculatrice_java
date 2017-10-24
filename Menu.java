@@ -19,7 +19,7 @@ public class Menu {
 
 	public static void menuPrincipal(){
 		
-		String [] choix = {"1 - Entrer dans la calculatrice en live", "2 - Importer un fichier dans la calculatrice en live", "3 - Nettoyer la calculatrice", "4 - Quitter"};
+		String [] choix = {"1 - Entrer dans la calculatrice en live", "4 - Quitter"};
 		int action = menu("Choisissez ce que vous  voulez faire : ", choix, true);
 		while (action > choix.length || action < 1){
 			System.out.println();
