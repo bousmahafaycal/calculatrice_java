@@ -1,3 +1,5 @@
+# Calculatrice avec  notation polonaise
+
 Projet réalisé par Fayçal BOUSMAHA et Mouhamed DIALLO
 
 Le projet a été réalisé dans son intégralité, c'est-à-dire jusqu'à l'exercice 4.
