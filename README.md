@@ -1,6 +1,6 @@
-# Calculatrice avec  notation polonaise
+# Calculatrice avec  notation polonaise inversée
 
-Projet réalisé par Fayçal BOUSMAHA et Mouhamed DIALLO
+Projet réalisé par Fayçal BOUSMAHA et Mouhamed DIALLO pour la matière CPO5 en L3 informatique à l'université Paris Diderot.
 
 Le projet a été réalisé dans son intégralité, c'est-à-dire jusqu'à l'exercice 4.
 Il est simple d'éxecution, il suffit de compiler tous les fichiers ".java" et de lancer le fichier "Main.java".
